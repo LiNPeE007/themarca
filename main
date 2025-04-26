@@ -1,0 +1,2020 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Marca | Authentic Turkish Restaurant in Bangkok</title>
+    <meta name="description" content="Experience authentic Turkish cuisine at The Marca, Bangkok's premier Turkish restaurant featuring traditional dishes, kebabs, and desserts.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <style>
+        /* ===== Variables ===== */
+        :root {
+            --primary: #8B0000;       /* Brick red */
+            --secondary: #D4AF37;     /* Gold */
+            --accent: #40E0D0;        /* Turquoise */
+            --light: #FFF5E6;         /* Cream */
+            --dark: #333;             /* Dark text */
+            --medium: #777;           /* Medium text */
+            --bg-light: #f9f5f0;      /* Light background */
+            --bg-dark: #1a1a1a;       /* Dark background */
+        }
+
+        /* ===== Base Styles ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+        }
+
+        .section-title p {
+            color: var(--medium);
+            max-width: 700px;
+            margin: 15px auto 0;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background-color: var(--secondary);
+            color: var(--primary);
+        }
+
+        .btn-primary:hover {
+            background-color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-outline {
+            border: 2px solid white;
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background-color: white;
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        /* ===== Header ===== */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(139, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            padding: 15px 0;
+        }
+
+        .header.scrolled {
+            padding: 10px 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            color: var(--secondary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: white;
+            font-weight: 600;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* ===== Hero Section ===== */
+        .hero {
+            height: 100vh;
+            min-height: 700px;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                        url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding-top: 80px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            animation: fadeInDown 1s ease;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            animation: fadeInUp 1s ease 0.3s forwards;
+            opacity: 0;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            animation: fadeInUp 1s ease 0.6s forwards;
+            opacity: 0;
+        }
+
+        /* ===== Menu Section ===== */
+        .menu {
+            background-color: var(--bg-light);
+        }
+
+        .menu-category {
+            margin-bottom: 60px;
+        }
+
+        .menu-category h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 30px;
+            padding-left: 15px;
+            border-left: 5px solid var(--secondary);
+        }
+
+        .menu-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .menu-item {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .menu-item-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--secondary);
+            color: var(--primary);
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 1;
+        }
+
+        .menu-item-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .menu-item:hover .menu-item-img {
+            transform: scale(1.05);
+        }
+
+        .menu-item-content {
+            padding: 25px;
+        }
+
+        .menu-item-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            align-items: flex-start;
+        }
+
+        .menu-item-name {
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: var(--primary);
+            flex: 1;
+        }
+
+        .menu-item-price {
+            font-weight: 700;
+            color: var(--secondary);
+            font-size: 1.1rem;
+            margin-left: 15px;
+        }
+
+        .menu-item-desc {
+            color: var(--medium);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .menu-item-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .menu-item-rating {
+            color: var(--secondary);
+            font-size: 0.9rem;
+        }
+
+        .add-to-cart {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .add-to-cart:hover {
+            background: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        /* ===== Booking Section ===== */
+        .booking {
+            background: linear-gradient(135deg, var(--primary), #6B0504);
+            color: white;
+        }
+
+        .booking-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .booking-header {
+            background: var(--primary);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .booking-header h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .booking-form {
+            padding: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .form-group select {
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+            background-size: 1em;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 15px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .form-submit:hover {
+            background: var(--secondary);
+            color: var(--primary);
+        }
+
+        /* ===== Location Section ===== */
+        .location {
+            background-color: var(--bg-light);
+        }
+
+        .location-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .location-card {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .location-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .location-card h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .location-card p {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .location-card i {
+            color: var(--secondary);
+            width: 20px;
+            text-align: center;
+        }
+
+        .map-container {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            height: 450px;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* ===== Gallery Section ===== */
+        .gallery {
+            background-color: var(--bg-dark);
+            color: white;
+        }
+
+        .gallery .section-title h2 {
+            color: white;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 250px;
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            padding: 20px;
+            color: white;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        /* ===== Footer ===== */
+        .footer {
+            background-color: var(--bg-dark);
+            color: white;
+            padding: 80px 0 30px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-about h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .footer-about p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--secondary);
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-links h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: white;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-links h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--secondary);
+        }
+
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+
+        .footer-links i {
+            font-size: 0.8rem;
+        }
+
+        .newsletter-form {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 5px 0 0 5px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .newsletter-form button {
+            background: var(--secondary);
+            color: var(--primary);
+            border: none;
+            padding: 0 20px;
+            border-radius: 0 5px 5px 0;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-form button:hover {
+            background: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+
+        /* ===== Animations ===== */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===== Responsive Styles ===== */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                padding: 60px 0;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+            
+            .menu-items {
+                grid-template-columns: 1fr;
+            }
+            
+            .location-info {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .menu-category h3 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <i class="fas fa-utensils"></i>
+                The Marca Turkish Restaurant
+            </a>
+            
+            <nav class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#menu">Menu</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#booking">Book a Table</a>
+                <a href="#location">Location</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Authentic Turkish Cuisine</h1>
+            <p>Experience the rich flavors of Turkey in the heart of Bangkok. Our dishes are prepared with traditional recipes and the finest ingredients.</p>
+            <div class="hero-buttons">
+                <a href="#menu" class="btn btn-primary">
+                    <i class="fas fa-utensils"></i> View Menu
+                </a>
+                <a href="#booking" class="btn btn-outline">
+                    <i class="fas fa-calendar-alt"></i> Book a Table
+                </a>
+            </div>
+        </div>
+    </section>           
+                   
+                    <!-- Menu Section -->
+<section class="section menu" id="menu">
+    <div class="container">
+        <div class="section-title">
+            <h2>Our Menu</h2>
+            <p>Authentic Turkish cuisine prepared with traditional recipes</p>
+        </div>
+
+    <!-- Breakfast Section -->
+<div class="menu-category">
+    <h3>KAHVALTI / BREAKFAST</h3>
+    <div class="menu-items">
+        <!-- Menemen -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/JrQ6f0A.jpg" alt="Menemen" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Menemen / Scrambled Eggs with Vegetables</span>
+                    <span class="menu-item-price">199 THB</span>
+                </div>
+                <p class="menu-item-desc">Traditional Turkish scrambled eggs with tomatoes, green peppers, and spices, served with fresh bread.</p>
+            </div>
+        </div>
+
+        <!-- Omlet -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/pQFhxWk.jpg" alt="Omelet" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Omlet / Omelet</span>
+                    <span class="menu-item-price">149 THB</span>
+                </div>
+                <p class="menu-item-desc">Fluffy omelet made with fresh eggs, served with your choice of cheese, sucuk (Turkish sausage), or vegetables.</p>
+            </div>
+        </div>
+
+        <!-- Sucuklu Yumurta -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/KLm3Z0x.jpg" alt="Sucuklu Yumurta" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Sucuklu Yumurta / Fried Eggs with Turkish Sausage</span>
+                    <span class="menu-item-price">199 THB</span>
+                </div>
+                <p class="menu-item-desc">Fried eggs served with spicy Turkish sucuk sausage, a classic Turkish breakfast favorite.</p>
+            </div>
+        </div>
+
+        <!-- Kavurmalı Yumurta -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/MNwTbGQ.jpg" alt="Kavurmalı Yumurta" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Kavurmalı Yumurta / Fried Eggs with Roasted Meat</span>
+                    <span class="menu-item-price">249 THB</span>
+                </div>
+                <p class="menu-item-desc">Fried eggs served with tender roasted beef, a hearty and protein-rich breakfast option.</p>
+            </div>
+        </div>
+
+        <!-- Patates Kızartması -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/yBZQw3H.jpg" alt="French Fries" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Patates Kızartması / French Fries</span>
+                    <span class="menu-item-price">119 THB</span>
+                </div>
+                <p class="menu-item-desc">Crispy golden fries, perfectly seasoned and served with ketchup or garlic yogurt sauce.</p>
+            </div>
+        </div>
+
+        <!-- Kahvaltı Tabağı -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/vVbTqHr.jpg" alt="Turkish Breakfast Plate" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Kahvaltı Tabağı / Breakfast Plate</span>
+                    <span class="menu-item-price">349 THB</span>
+                </div>
+                <p class="menu-item-desc">Complete Turkish breakfast spread including: olives, white cheese, kasar cheese, butter, honey, jam, boiled eggs, tomatoes, cucumbers, french fries, and unlimited Turkish tea.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+      <!-- Soups Section -->
+<div class="menu-category">
+    <h3>ÇORBALAR / SOUPS</h3>
+    <div class="menu-items">
+        <!-- Mercimek -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/LqQ9W3j.jpg" alt="Lentil Soup" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Mercimek / Lentil Soup</span>
+                    <span class="menu-item-price">119 THB</span>
+                </div>
+                <p class="menu-item-desc">Classic Turkish red lentil soup with carrots, onions and a hint of mint, served with lemon wedges and crusty bread.</p>
+            </div>
+        </div>
+
+        <!-- Ezogelin -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/RtVJk9P.jpg" alt="Ezogelin Soup" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Ezogelin / Spicy Red Lentil and Bulgur Soup</span>
+                    <span class="menu-item-price">119 THB</span>
+                </div>
+                <p class="menu-item-desc">Hearty soup made with red lentils, bulgur wheat, rice, and flavored with mint and red pepper flakes.</p>
+            </div>
+        </div>
+
+        <!-- İşkembe -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/9XzQZhH.jpg" alt="Tripe Soup" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">İşkembe / Tripe Soup</span>
+                    <span class="menu-item-price">249 THB</span>
+                </div>
+                <p class="menu-item-desc">Traditional Turkish tripe soup with garlic-infused broth, believed to be a great hangover remedy.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+      <!-- Kebabs Section -->
+<div class="menu-category">
+    <h3>KEBAPLAR / KEBABS</h3>
+    <div class="menu-items">
+        <!-- Adana -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/VvXqZJN.jpg" alt="Adana Kebab" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Adana / Adana Kebab</span>
+                    <span class="menu-item-price">349 THB</span>
+                </div>
+                <p class="menu-item-desc">Spicy hand-minced lamb kebab grilled on skewers, served with rice, grilled vegetables and bread.</p>
+            </div>
+        </div>
+
+        <!-- Urfa -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/WpGzh7v.jpg" alt="Urfa Kebab" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Urfa / Urfa Kebab</span>
+                    <span class="menu-item-price">349 THB</span>
+                </div>
+                <p class="menu-item-desc">Mild version of Adana kebab with less spice but equally flavorful, named after the city of Urfa.</p>
+            </div>
+        </div>
+
+        <!-- Beyti -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/xYQz4Uf.jpg" alt="Beyti Kebab" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Beyti / Beyti Kebab</span>
+                    <span class="menu-item-price">349 THB</span>
+                </div>
+                <p class="menu-item-desc">Minced meat kebab wrapped in lavash bread, served with tomato sauce and yogurt.</p>
+            </div>
+        </div>
+
+        <!-- Kuşbaşı -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/dF5mWrE.jpg" alt="Grilled Cubed Meat" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Kuşbaşı / Grilled Cubed Meat</span>
+                    <span class="menu-item-price">369 THB</span>
+                </div>
+                <p class="menu-item-desc">Tender cubes of lamb grilled to perfection with tomatoes and peppers.</p>
+            </div>
+        </div>
+
+        <!-- Sarma Beyti -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/JkLvR9N.jpg" alt="Rolled Beyti Kebab" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Sarma Beyti / Rolled Beyti Kebab</span>
+                    <span class="menu-item-price">399 THB</span>
+                </div>
+                <p class="menu-item-desc">Special version of Beyti kebab where the minced meat is rolled in thin bread before grilling.</p>
+            </div>
+        </div>
+
+        <!-- Alinazik -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/sTpP3qQ.jpg" alt="Alinazik Kebab" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Alinazik / Alinazik Kebab</span>
+                    <span class="menu-item-price">369 THB</span>
+                </div>
+                <p class="menu-item-desc">Smoky eggplant purée topped with grilled minced meat and garlic yogurt.</p>
+            </div>
+        </div>
+
+        <!-- Patlıcan Kebabı -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/hGqVvzL.jpg" alt="Eggplant Kebab" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Patlıcan Kebabı / Eggplant Kebab</span>
+                    <span class="menu-item-price">399 THB</span>
+                </div>
+                <p class="menu-item-desc">Grilled eggplant slices layered with minced meat and tomatoes.</p>
+            </div>
+        </div>
+
+        <!-- Kilis Tava -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/8mQhZbB.jpg" alt="Kilis Style Pan Kebab" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Kilis Tava / Kilis Style Pan Kebab</span>
+                    <span class="menu-item-price">299 THB</span>
+                </div>
+                <p class="menu-item-desc">Diced lamb cooked with tomatoes, peppers and spices in a copper pan.</p>
+            </div>
+        </div>
+
+        <!-- Izgara Köfte -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/q9XzL4T.jpg" alt="Grilled Meatballs" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Izgara Köfte / Grilled Meatballs</span>
+                    <span class="menu-item-price">349 THB</span>
+                </div>
+                <p class="menu-item-desc">Handmade Turkish meatballs seasoned with herbs and grilled, served with rice or bulgur.</p>
+            </div>
+        </div>
+
+        <!-- Kuzu Kuşbaşı -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/dF5mWrE.jpg" alt="Grilled Cubed Lamb" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Kuzu Kuşbaşı / Grilled Cubed Lamb</span>
+                    <span class="menu-item-price">369 THB</span>
+                </div>
+                <p class="menu-item-desc">Tender cubes of lamb marinated with herbs and grilled over charcoal.</p>
+            </div>
+        </div>
+
+        <!-- Tavuk Şiş -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/mNwXpLq.jpg" alt="Chicken Skewers" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Tavuk Şiş / Chicken Skewers</span>
+                    <span class="menu-item-price">269 THB</span>
+                </div>
+                <p class="menu-item-desc">Marinated chicken cubes grilled on skewers, served with rice and grilled vegetables.</p>
+            </div>
+        </div>
+
+        <!-- Kanat Izgara -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/KmTp0vR.jpg" alt="Grilled Chicken Wings" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Kanat Izgara / Grilled Chicken Wings</span>
+                    <span class="menu-item-price">299 THB</span>
+                </div>
+                <p class="menu-item-desc">Juicy chicken wings marinated with Turkish spices and grilled to perfection.</p>
+            </div>
+        </div>
+
+        <!-- Tavuk Kıyma -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/q9XzL4T.jpg" alt="Minced Chicken Kebab" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Tavuk Kıyma / Minced Chicken Kebab</span>
+                    <span class="menu-item-price">289 THB</span>
+                </div>
+                <p class="menu-item-desc">Minced chicken kebab seasoned with Turkish spices, grilled and served with rice.</p>
+            </div>
+        </div>
+
+        <!-- Karışık Kebap -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/zXwQq4L.jpg" alt="Mixed Kebab Plate" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Karışık Kebap / Mixed Kebab Plate</span>
+                    <span class="menu-item-price">1199 THB</span>
+                </div>
+                <p class="menu-item-desc">Sampler platter including: Adana, Kuşbaşı, Kanat, Tavuk Şiş, and Tavuk Kıyma, perfect for sharing (serves 2-3 people).</p>
+            </div>
+        </div>
+
+        <!-- İskender Kebap -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/xYQz4Uf.jpg" alt="Iskender Kebab" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">İskender Kebap / İskender Kebab</span>
+                    <span class="menu-item-price">399 THB</span>
+                </div>
+                <p class="menu-item-desc">Thinly sliced doner kebab served over pita bread, topped with tomato sauce and melted butter, accompanied by yogurt.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+ <!-- Wraps Section -->
+<div class="menu-category">
+    <h3>DÜRÜMLER / WRAPS</h3>
+    <div class="menu-items">
+        <!-- Adana Dürüm -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/qp3wG2t.jpg" alt="Adana Wrap" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Adana Dürüm / Adana Wrap</span>
+                    <span class="menu-item-price">299 THB</span>
+                </div>
+                <p class="menu-item-desc">Spicy Adana kebab wrapped in fresh lavash bread with onions, parsley and sumac.</p>
+            </div>
+        </div>
+
+        <!-- Urfa Dürüm -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/WpGzh7v.jpg" alt="Urfa Wrap" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Urfa Dürüm / Urfa Wrap</span>
+                    <span class="menu-item-price">299 THB</span>
+                </div>
+                <p class="menu-item-desc">Mild version of Adana wrap with less spice, wrapped in thin lavash bread.</p>
+            </div>
+        </div>
+
+        <!-- Kuşbaşı Dürüm -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/dF5mWrE.jpg" alt="Grilled Cubed Meat Wrap" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Kuşbaşı Dürüm / Grilled Cubed Meat Wrap</span>
+                    <span class="menu-item-price">299 THB</span>
+                </div>
+                <p class="menu-item-desc">Tender cubes of grilled lamb wrapped with vegetables in lavash bread.</p>
+            </div>
+        </div>
+
+        <!-- Tavuk Şiş Dürüm -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/mNwXpLq.jpg" alt="Chicken Skewer Wrap" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Tavuk Şiş Dürüm / Chicken Skewer Wrap</span>
+                    <span class="menu-item-price">269 THB</span>
+                </div>
+                <p class="menu-item-desc">Grilled chicken cubes with vegetables and garlic sauce wrapped in lavash.</p>
+            </div>
+        </div>
+
+        <!-- Tavuk Kıyma Dürüm -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/q9XzL4T.jpg" alt="Minced Chicken Wrap" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Tavuk Kıyma Dürüm / Minced Chicken Wrap</span>
+                    <span class="menu-item-price">219 THB</span>
+                </div>
+                <p class="menu-item-desc">Minced chicken kebab with vegetables and sauces wrapped in thin bread.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+ <!-- Pide Section -->
+<div class="menu-category">
+    <h3>PİDELER / FLATBREAD PIZZA</h3>
+    <div class="menu-items">
+        <!-- Kaşarlı -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/zFdQZ2B.jpg" alt="Cheese Pide" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Kaşarlı / With Cheese</span>
+                    <span class="menu-item-price">249 THB</span>
+                </div>
+                <p class="menu-item-desc">Traditional Turkish flatbread topped with melted kasar cheese.</p>
+            </div>
+        </div>
+
+        <!-- Beyaz Peynirli -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/vVbTqHr.jpg" alt="White Cheese Pide" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Beyaz Peynirli / With White Cheese</span>
+                    <span class="menu-item-price">249 THB</span>
+                </div>
+                <p class="menu-item-desc">Flatbread topped with white cheese (feta) and herbs.</p>
+            </div>
+        </div>
+
+        <!-- Kavurmalı -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/MNwTbGQ.jpg" alt="Roasted Meat Pide" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Kavurmalı / With Roasted Meat</span>
+                    <span class="menu-item-price">259 THB</span>
+                </div>
+                <p class="menu-item-desc">Flatbread topped with tender roasted beef and vegetables.</p>
+            </div>
+        </div>
+
+        <!-- Sucuk-Kaşar -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/KLm3Z0x.jpg" alt="Sausage Cheese Pide" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Sucuk-Kaşar / Turkish Sausage and Cheese</span>
+                    <span class="menu-item-price">259 THB</span>
+                </div>
+                <p class="menu-item-desc">Flatbread topped with spicy Turkish sausage and melted cheese.</p>
+            </div>
+        </div>
+
+        <!-- Kuşbaşılı -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/dF5mWrE.jpg" alt="Cubed Meat Pide" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Kuşbaşılı / Grilled Cubed Meat</span>
+                    <span class="menu-item-price">269 THB</span>
+                </div>
+                <p class="menu-item-desc">Flatbread topped with grilled cubed lamb and vegetables.</p>
+            </div>
+        </div>
+
+        <!-- Kıymalı -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/VvXqZJN.jpg" alt="Minced Meat Pide" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Kıymalı / Minced Meat</span>
+                    <span class="menu-item-price">259 THB</span>
+                </div>
+                <p class="menu-item-desc">Flatbread topped with seasoned minced meat and vegetables.</p>
+            </div>
+        </div>
+
+        <!-- Karışık -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/zXwQq4L.jpg" alt="Mixed Pide" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Karışık / Mixed</span>
+                    <span class="menu-item-price">299 THB</span>
+                </div>
+                <p class="menu-item-desc">Flatbread topped with mixed ingredients: cheese, meat, vegetables.</p>
+            </div>
+        </div>
+
+        <!-- Vegan -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/hGqVvzL.jpg" alt="Vegan Pide" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Vegan / Vegan</span>
+                    <span class="menu-item-price">249 THB</span>
+                </div>
+                <p class="menu-item-desc">Vegan flatbread topped with seasonal vegetables and herbs.</p>
+            </div>
+        </div>
+
+        <!-- Vejeteryan -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/vVbTqHr.jpg" alt="Vegetarian Pide" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Vejeteryan / Vegetarian</span>
+                    <span class="menu-item-price">249 THB</span>
+                </div>
+                <p class="menu-item-desc">Vegetarian flatbread with cheese and assorted vegetables.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+       <!-- Lahmacun Section -->
+<div class="menu-category">
+    <h3>LAHMACUN / TURKISH PIZZA</h3>
+    <div class="menu-items">
+        <!-- Klasik -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/5tQy0Zj.jpg" alt="Classic Lahmacun" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Klasik / Classic</span>
+                    <span class="menu-item-price">149 THB</span>
+                </div>
+                <p class="menu-item-desc">Thin crust topped with minced meat, vegetables, and herbs, served with lemon and parsley.</p>
+            </div>
+        </div>
+
+        <!-- Antep Usulü -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/7kXm9nL.jpg" alt="Gaziantep Style Lahmacun" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Antep Usulü / Gaziantep Style</span>
+                    <span class="menu-item-price">149 THB</span>
+                </div>
+                <p class="menu-item-desc">Spicy version from Gaziantep with extra chili and paprika in the topping.</p>
+            </div>
+        </div>
+
+        <!-- Tavuklu -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/mNwXpLq.jpg" alt="Chicken Lahmacun" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Tavuklu / With Chicken</span>
+                    <span class="menu-item-price">119 THB</span>
+                </div>
+                <p class="menu-item-desc">Thin crust topped with minced chicken and vegetables, lighter option.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+     <!-- Pizzas Section -->
+<div class="menu-category">
+    <h3>PİZZALAR / PIZZAS</h3>
+    <div class="menu-items">
+        <!-- Margarita -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/zFdQZ2B.jpg" alt="Margarita Pizza" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Margarita / Margarita</span>
+                    <span class="menu-item-price">269 THB</span>
+                </div>
+                <p class="menu-item-desc">Classic pizza with tomato sauce, mozzarella, and fresh basil.</p>
+            </div>
+        </div>
+
+        <!-- Vejeteryan -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/vVbTqHr.jpg" alt="Vegetarian Pizza" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Vejeteryan / Vegetarian</span>
+                    <span class="menu-item-price">299 THB</span>
+                </div>
+                <p class="menu-item-desc">Loaded with bell peppers, mushrooms, olives, onions, and cheese.</p>
+            </div>
+        </div>
+
+        <!-- Vegan -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/hGqVvzL.jpg" alt="Vegan Pizza" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Vegan / Vegan</span>
+                    <span class="menu-item-price">299 THB</span>
+                </div>
+                <p class="menu-item-desc">Dairy-free pizza with vegan cheese and seasonal vegetables.</p>
+            </div>
+        </div>
+
+        <!-- Karışık -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/zXwQq4L.jpg" alt="Mixed Pizza" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Karışık / Mixed</span>
+                    <span class="menu-item-price">349 THB</span>
+                </div>
+                <p class="menu-item-desc">Combination of Turkish sausage (sucuk), mozzarella, mushrooms, olives, corn, tomatoes, and special sauce.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+      <!-- Casseroles Section -->
+<div class="menu-category">
+    <h3>GÜVEÇLER / CASSEROLES</h3>
+    <div class="menu-items">
+        <!-- Kuru Fasulye -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/LqQ9W3j.jpg" alt="White Beans Casserole" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Kuru Fasulye / White Beans</span>
+                    <span class="menu-item-price">199 THB</span>
+                </div>
+                <p class="menu-item-desc">Slow-cooked white beans with tomatoes and onions in traditional earthenware pot.</p>
+            </div>
+        </div>
+
+        <!-- Nohut -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/RtVJk9P.jpg" alt="Chickpeas Casserole" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Nohut / Chickpeas</span>
+                    <span class="menu-item-price">199 THB</span>
+                </div>
+                <p class="menu-item-desc">Chickpeas stewed with meat and spices in clay pot.</p>
+            </div>
+        </div>
+
+        <!-- Kuşbaşı -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/dF5mWrE.jpg" alt="Cubed Beef Casserole" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Kuşbaşı / Cubed Beef</span>
+                    <span class="menu-item-price">349 THB</span>
+                </div>
+                <p class="menu-item-desc">Tender beef cubes cooked with vegetables in rich tomato sauce.</p>
+            </div>
+        </div>
+
+        <!-- Mantar -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/sTpP3qQ.jpg" alt="Mushroom Casserole" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Mantar / Mushrooms</span>
+                    <span class="menu-item-price">269 THB</span>
+                </div>
+                <p class="menu-item-desc">Assorted mushrooms baked with cheese and herbs in clay pot.</p>
+            </div>
+        </div>
+
+        <!-- Köfte Güveç -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/q9XzL4T.jpg" alt="Meatball Casserole" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Köfte Güveç / Meatball Casserole</span>
+                    <span class="menu-item-price">299 THB</span>
+                </div>
+                <p class="menu-item-desc">Turkish meatballs baked with potatoes and tomatoes in clay pot.</p>
+            </div>
+        </div>
+      <!-- Pilav / Rice -->
+      <div class="menu-item">
+        <img src="https://i.imgur.com/9YQxZfJ.jpg" alt="Turkish Rice" class="menu-item-img">
+        <div class="menu-item-content">
+            <div class="menu-item-header">
+                <span class="menu-item-name">Pilav / Rice</span>
+                <span class="menu-item-price">59 THB</span>
+            </div>
+            <p class="menu-item-desc">Fragrant Turkish rice cooked with butter and orzo pasta, perfect side dish for kebabs.</p>
+        </div>
+    </div>
+</div>
+            
+
+
+       <!-- Appetizers Section -->
+<div class="menu-category">
+    <h3>MEZELER / APPETIZERS</h3>
+    <div class="menu-items">
+        <!-- Yoğurt -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/3sQvW7a.jpg" alt="Yogurt" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Yoğurt / Yogurt</span>
+                    <span class="menu-item-price">99 THB</span>
+                </div>
+                <p class="menu-item-desc">Homemade Turkish yogurt, creamy and slightly tangy, served with a drizzle of olive oil.</p>
+            </div>
+        </div>
+
+        <!-- Turşu -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/7XjKp9L.jpg" alt="Pickles" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Turşu / Pickles</span>
+                    <span class="menu-item-price">99 THB</span>
+                </div>
+                <p class="menu-item-desc">Assorted Turkish pickles including cucumber, cabbage, and peppers, perfect palate cleanser.</p>
+            </div>
+        </div>
+
+        <!-- Haydari -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/5mRz4hD.jpg" alt="Haydari" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Haydari / Yogurt with Garlic and Herbs</span>
+                    <span class="menu-item-price">119 THB</span>
+                </div>
+                <p class="menu-item-desc">Thick yogurt mixed with garlic, dill, and mint, served with bread.</p>
+            </div>
+        </div>
+
+        <!-- Cacık -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/8kY9vVq.jpg" alt="Cacık" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Cacık / Yogurt with Cucumber and Mint</span>
+                    <span class="menu-item-price">119 THB</span>
+                </div>
+                <p class="menu-item-desc">Refreshing yogurt dip with grated cucumber, garlic, and fresh mint.</p>
+            </div>
+        </div>
+
+        <!-- Humus Klasik -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/JkLvR9N.jpg" alt="Classic Hummus" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Humus Klasik / Classic Hummus</span>
+                    <span class="menu-item-price">179 THB</span>
+                </div>
+                <p class="menu-item-desc">Smooth chickpea puree with tahini, lemon, and olive oil, served with warm pita.</p>
+            </div>
+        </div>
+
+        <!-- Etli Humus -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/VvXqZJN.jpg" alt="Hummus with Meat" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Etli Humus / Hummus with Meat</span>
+                    <span class="menu-item-price">269 THB</span>
+                </div>
+                <p class="menu-item-desc">Classic hummus topped with spiced minced meat and pine nuts.</p>
+            </div>
+        </div>
+
+        <!-- Acılı Atom -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/KmTp0vR.jpg" alt="Spicy Yogurt Dip" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Acılı Atom / Spicy Yogurt Dip</span>
+                    <span class="menu-item-price">139 THB</span>
+                </div>
+                <p class="menu-item-desc">Fiery red pepper yogurt dip with garlic, best with grilled bread.</p>
+            </div>
+        </div>
+
+        <!-- Acılı Ezme -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/7kXm9nL.jpg" alt="Spicy Tomato Salad" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Acılı Ezme / Spicy Tomato Salad</span>
+                    <span class="menu-item-price">129 THB</span>
+                </div>
+                <p class="menu-item-desc">Finely chopped tomatoes, onions, and peppers with spicy seasoning.</p>
+            </div>
+        </div>
+
+        <!-- Gavurdağı -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/hGqVvzL.jpg" alt="Walnut Tomato Salad" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Gavurdağı / Walnut Tomato Salad</span>
+                    <span class="menu-item-price">149 THB</span>
+                </div>
+                <p class="menu-item-desc">Diced tomatoes with walnuts, pomegranate molasses, and herbs.</p>
+            </div>
+        </div>
+
+        <!-- Köz Soğan -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/8mQhZbB.jpg" alt="Roasted Onion" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Köz Soğan / Roasted Onion</span>
+                    <span class="menu-item-price">119 THB</span>
+                </div>
+                <p class="menu-item-desc">Sweet roasted onions with pomegranate and sumac dressing.</p>
+            </div>
+        </div>
+
+        <!-- Köz Patlıcan -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/sTpP3qQ.jpg" alt="Roasted Eggplant" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Köz Patlıcan / Roasted Eggplant</span>
+                    <span class="menu-item-price">119 THB</span>
+                </div>
+                <p class="menu-item-desc">Smoky roasted eggplant puree with garlic and olive oil.</p>
+            </div>
+        </div>
+
+        <!-- Yoğurtlu Patlıcan -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/5mRz4hD.jpg" alt="Eggplant with Yogurt" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Yoğurtlu Patlıcan / Eggplant with Yogurt</span>
+                    <span class="menu-item-price">149 THB</span>
+                </div>
+                <p class="menu-item-desc">Grilled eggplant slices topped with garlic yogurt and tomato sauce.</p>
+            </div>
+        </div>
+
+        <!-- Havuç Tarator -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/8kY9vVq.jpg" alt="Carrot Yogurt Salad" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Havuç Tarator / Carrot Yogurt Salad</span>
+                    <span class="menu-item-price">139 THB</span>
+                </div>
+                <p class="menu-item-desc">Grated carrots with yogurt, garlic, and walnut topping.</p>
+            </div>
+        </div>
+
+        <!-- Şakşuka -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/7kXm9nL.jpg" alt="Şakşuka" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Şakşuka / Eggplant with Tomato Sauce</span>
+                    <span class="menu-item-price">149 THB</span>
+                </div>
+                <p class="menu-item-desc">Fried eggplant and zucchini in rich tomato and pepper sauce.</p>
+            </div>
+        </div>
+
+        <!-- Piyaz -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/LqQ9W3j.jpg" alt="White Bean Salad" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Piyaz / White Bean Salad</span>
+                    <span class="menu-item-price">149 THB</span>
+                </div>
+                <p class="menu-item-desc">White beans with onions, parsley, and tahini-lemon dressing.</p>
+            </div>
+        </div>
+    </div>
+</div>
+    
+      <!-- Breads Section -->
+<div class="menu-category">
+    <h3>EKMEKLER / BREADS</h3>
+    <div class="menu-items">
+        <!-- Tırnaklı Pide -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/qp3wG2t.jpg" alt="Tandoor Bread" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Tırnaklı Pide / Tandoor Bread</span>
+                    <span class="menu-item-price">59 THB</span>
+                </div>
+                <p class="menu-item-desc">Traditional hand-stretched bread baked in stone oven with finger marks on edges.</p>
+            </div>
+        </div>
+
+        <!-- Lavaş -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/mNwXpLq.jpg" alt="Flatbread" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Lavaş / Flatbread</span>
+                    <span class="menu-item-price">59 THB</span>
+                </div>
+                <p class="menu-item-desc">Soft and thin traditional Turkish flatbread perfect for wrapping kebabs.</p>
+            </div>
+        </div>
+
+        <!-- Balon Ekmek -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/5tQy0Zj.jpg" alt="Balloon Bread" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Balon Ekmek / Balloon Bread</span>
+                    <span class="menu-item-price">59 THB</span>
+                </div>
+                <p class="menu-item-desc">Puffed round bread with crispy crust and soft interior, great for dipping.</p>
+            </div>
+        </div>
+
+        <!-- Sandviç Ekmek -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/7kXm9nL.jpg" alt="Sandwich Bread" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Sandviç Ekmek / Sandwich Bread</span>
+                    <span class="menu-item-price">59 THB</span>
+                </div>
+                <p class="menu-item-desc">Soft white bread with sturdy texture, ideal for Turkish-style sandwiches.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Desserts Section -->
+<div class="menu-category">
+    <h3>TATLILAR / DESSERTS</h3>
+    <div class="menu-items">
+        <!-- Sütlaç -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/aBcDeF1.jpg" alt="Rice Pudding" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Sütlaç / Rice Pudding</span>
+                    <span class="menu-item-price">129 THB</span>
+                </div>
+                <p class="menu-item-desc">Creamy Turkish rice pudding with caramelized top, served chilled.</p>
+            </div>
+        </div>
+
+        <!-- Kazandibi -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/bCdEfG2.jpg" alt="Burnt Milk Pudding" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Kazandibi / Burnt Milk Pudding</span>
+                    <span class="menu-item-price">149 THB</span>
+                </div>
+                <p class="menu-item-desc">Caramelized milk pudding with a distinctive burnt bottom layer.</p>
+            </div>
+        </div>
+
+        <!-- İrmik Tatlısı -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/cDeFgH3.jpg" alt="Semolina Dessert" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">İrmik Tatlısı / Semolina Dessert</span>
+                    <span class="menu-item-price">129 THB</span>
+                </div>
+                <p class="menu-item-desc">Sweet semolina cake soaked in syrup, topped with coconut or nuts.</p>
+            </div>
+        </div>
+
+        <!-- Baklava -->
+        <div class="menu-item">
+            <img src="https://i.imgur.com/dEfGhI4.jpg" alt="Baklava" class="menu-item-img">
+            <div class="menu-item-content">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Baklava / Baklava</span>
+                    <span class="menu-item-price">199 THB</span>
+                </div>
+                <p class="menu-item-desc">Layers of flaky pastry filled with pistachios and sweetened with syrup.</p>
+            </div>
+        </div>
+
+        
+
+
+
+
+    </section>  
+    <!-- Booking Section -->
+    <section class="section booking" id="booking">
+        <div class="container">
+            <div class="section-title">
+                <h2>Book a Table</h2>
+                <p>Reserve your table in advance for the best dining experience</p>
+            </div>
+            
+            <div class="booking-container">
+                <div class="booking-header">
+                    <h3>Make a Reservation</h3>
+                    <p>We'll confirm your booking via phone or email</p>
+                </div>
+                
+                <form class="booking-form">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="date">Date</label>
+                        <input type="date" id="date" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="time">Time</label>
+                        <select id="time" required>
+                            <option value="">Select Time</option>
+                            <option value="11:00">11:00 AM</option>
+                            <option value="12:00">12:00 PM</option>
+                            <!-- Add more time slots -->
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="guests">Number of Guests</label>
+                        <select id="guests" required>
+                            <option value="">Select Guests</option>
+                            <option value="1">1 Person</option>
+                            <option value="2">2 People</option>
+                            <!-- Add more options -->
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="notes">Special Requests</label>
+                        <textarea id="notes" rows="3"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="form-submit">
+                        <i class="fas fa-calendar-check"></i> Book Now
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="section gallery" id="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Gallery</h2>
+                <p>Take a look at our restaurant and delicious dishes</p>
+            </div>
+            
+            <div class="gallery-grid">
+                <!-- Gallery Item 1 -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Restaurant Interior" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h4>Restaurant Interior</h4>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 2 -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Adana Kebab" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h4>Adana Kebab</h4>
+                    </div>
+                </div>
+                
+                <!-- Add more gallery items here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section class="section location" id="location">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Location</h2>
+                <p>Visit us at our convenient location in Bangkok</p>
+            </div>
+            
+            <div class="location-info">
+                <div class="location-card">
+                    <h3>Contact Information</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Sukhumvit Road, Bangkok</p>
+                    <p><i class="fas fa-phone"></i> +66 2 123 4567</p>
+                    <p><i class="fas fa-envelope"></i> info@themarca.com</p>
+                    <p><i class="fas fa-clock"></i> Open Daily: 10:00 AM - 10:00 PM</p>
+                </div>
+                
+                <div class="location-card">
+                    <h3>Transportation</h3>
+                    <p><i class="fas fa-subway"></i> BTS: Nana Station (Exit 3)</p>
+                    <p><i class="fas fa-bus"></i> Bus: 2, 25, 40, 511</p>
+                    <p><i class="fas fa-parking"></i> Free Parking Available</p>
+                    <p><i class="fas fa-wheelchair"></i> Wheelchair Accessible</p>
+                </div>
+            </div>
+            
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.223917470861!2d100.5208053153346!3d13.72374959033515!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e2994f83044e7d%3A0x1deea304be94828a!2sThe%20Marca%20Turkish%20Restaurant!5e0!3m2!1sen!2sth!4v1620000000000!5m2!1sen!2sth" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <h3>The Marca</h3>
+                    <p>Authentic Turkish restaurant in Bangkok serving traditional dishes made with the finest ingredients and family recipes.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-line"></i></a>
+                        <a href="#"><i class="fab fa-tripadvisor"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="#menu"><i class="fas fa-chevron-right"></i> Menu</a></li>
+                        <li><a href="#gallery"><i class="fas fa-chevron-right"></i> Gallery</a></li>
+                        <i class="fas fa-chevron-right"></i> Book a Table</a></li>
+                        <li><a href="#location"><i class="fas fa-chevron-right"></i> Location</a></li>
+                        <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Menu Categories</h3>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Breakfast</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Kebabs</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Wraps</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Desserts</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Beverages</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-newsletter">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to receive updates and special offers</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                    <p>We respect your privacy. Unsubscribe at any time.</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 The Marca Turkish Restaurant. All rights reserved.</p>
+                <p>Designed with <i class="fas fa-heart" style="color: var(--secondary);"></i> in Bangkok</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', function() {
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        // Sticky header on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add to cart functionality
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('add-to-cart') || 
+                e.target.closest('.add-to-cart')) {
+                const menuItem = e.target.closest('.menu-item');
+                const itemName = menuItem.querySelector('.menu-item-name').textContent;
+                alert(`${itemName} has been added to your order!`);
+            }
+        });
+
+        // Form submission handling
+        const bookingForm = document.querySelector('.booking-form');
+        bookingForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your reservation! We will contact you shortly to confirm.');
+            this.reset();
+        });
+
+        const newsletterForm = document.querySelector('.newsletter-form');
+        newsletterForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input').value;
+            alert(`Thank you for subscribing with ${email}!`);
+            this.reset();
+        });
+    </script>
+</body>
+</html>
